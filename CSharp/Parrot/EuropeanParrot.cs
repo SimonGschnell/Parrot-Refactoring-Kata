@@ -4,7 +4,7 @@ public class EuropeanParrot(int numberOfCoconuts, double voltage, bool isNailed)
 {
     public override double GetSpeed()
     {
-        return GetBaseSpeed();
+        return BaseSpeed;
     }
 
     public override string GetCry()

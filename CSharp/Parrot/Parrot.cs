@@ -1,28 +1,14 @@
-﻿using System;
+﻿namespace Parrot;
 
-namespace Parrot
+public abstract class Parrot(int numberOfCoconuts, double voltage, bool isNailed)
 {
-    public abstract class Parrot(int numberOfCoconuts, double voltage, bool isNailed)
-    {
-        public abstract double GetSpeed();
+    private static double LoadFactor => 9.0;
 
-        protected double GetBaseSpeed(double voltage)
-        {
-            return Math.Min(24.0, voltage * GetBaseSpeed());
-        }
+    protected double NumberOfCoconutsLoadFactor => LoadFactor * numberOfCoconuts;
+    
+    protected virtual double BaseSpeed => 12.0;
+    
+    public abstract double GetSpeed();
 
-        protected  double GetLoadFactor()
-        {
-            return 9.0;
-        }
-
-        protected double GetBaseSpeed()
-        {
-            return 12.0;
-        }
-
-        public abstract string GetCry();
-
-        
-    }
+    public abstract string GetCry();
 }
